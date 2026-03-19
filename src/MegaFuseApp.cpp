@@ -357,7 +357,7 @@ void MegaFuseApp::transfer_update(int td, m_off_t bytes, m_off_t size, dstime st
 	if(it->second.startOffset && it->second.available_bytes>= it->second.size) {
 		printf("workaround 1\n"); //have to call manually if the download didn't start at 0
 		transfer_complete(td,NULL,NULL);
-	} else if(endChunk > startChunk && endChunk < it->second.availableChunks.size() && it->second.availableChunks[endChunk]) {
+	} else if(endChunk > startChunk && static_cast<size_t>(endChunk) < it->second.availableChunks.size() && it->second.availableChunks[endChunk]) {
 		printf("----Downloading already available data at block %d. stopping...\n",endChunk);
 		transfer_complete(td,NULL,NULL);
 	}
