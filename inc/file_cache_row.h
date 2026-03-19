@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <cstdint>
 struct file_cache_row
 {
     enum CacheStatus{INVALID,DOWNLOADING,UPLOADING,AVAILABLE,DOWNLOAD_PAUSED};
