@@ -1,5 +1,6 @@
 #include <fuse.h>
 #include <thread>
+#include <cstdint>
 #include "EventsHandler.h"
 
 #define MEGAFUSE_BUFF_SIZE	1024
